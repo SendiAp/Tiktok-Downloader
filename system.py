@@ -111,5 +111,11 @@ def Bot(update):
 				"Kirimkan Saya Url Tiktok! Contoh: https://vt.tiktok.com/ZSRSCjoeW/",
 				msgid
 			)
+		elif meseg.startswith("/donasi"):
+			SendMsg(
+				userid,
+				"Donasi Disini @telegameSM",
+				msgid
+			)
 	except KeyError:
 		return
