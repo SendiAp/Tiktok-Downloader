@@ -13,15 +13,15 @@ def SendVideo(userid,msgid):
 	tg_url = api + "/sendvideo"
 	data = {
 		"chat_id":userid,
-		"caption":"<b>Video Downloaded from</b> @TiktokVideoDownloaderIDBot!\n\n<b>EN</b> : <i>if video blank send url again!</i>\n<b>ID</b> : <i>jika video putih kirim url lagi</i>",
+		"caption":"<b>Upload By:</b> @smtiktokdownloaderbot",
 		"parse_mode":"html",
 		"reply_to_message_id":msgid,
 		"reply_markup":json.dumps({
 			"inline_keyboard":[
 				[
 					{
-						"text":"Support Me <3",
-						"url":"https://www.youtube.com/channel/UCTjTQErgDA79Owo6tnYN0PQ?sub_confirmation=1"
+						"text":"SM•Project",
+						"url":"t.me/smprojectID"
 					}
 				]
 			]
@@ -62,7 +62,7 @@ def Bot(update):
 		if update['message']['chat']['type'] != "private":
 			SendMsg(
 				userid,
-				"Bot only work in private chat !",
+				"Bot hanya berfungsi di obrolan pribadi !",
 				msgid
 			)
 			return
@@ -71,7 +71,7 @@ def Bot(update):
 		if meseg.startswith('/start'):
 			SendMsg(
 				userid,
-				"<b>Welcome to Tiktok Video Downlaoder Bot !</b>\n\n<b>How to use this bot </b>:\n<i>just send or paste url video tiktok on this bot </i>!!\n",
+				"Hai, bot ini dapat mengunduh video tanpa tanda air dari <b>TikTok.</b> Untuk memulai, kirimkan tautan ke bot.\n",
 				msgid
 			)
 		elif "tiktok.com" in meseg and "https://" in meseg :
@@ -79,7 +79,7 @@ def Bot(update):
 			if getvid == False:
 				SendMsg(
 					userid,
-					"<i>Failed to download video</i>\n\n<i>Try again later</i>",
+					"<i>Gagal mengunduh video</i>\n\n<i>coba lagi nanti</i>",
 					msgid
 				)
 				return
@@ -108,13 +108,7 @@ def Bot(update):
 		elif "/help" in meseg:
 			SendMsg(
 				userid,
-				"How to use this bot :\njust send or paste url tiktok video on this bot !\n\n/donation - for donation bot\n/status - show status bot",
-				msgid
-			)
-		elif meseg.startswith("/donation"):
-			SendMsg(
-				userid,
-				"Support me on\n\nko-fi (EN): https://ko-fi.com/fowawaztruffle\nsaweria (ID): https://saweria.co/fowawaztruffle\ntrakteerid (ID): https://trakteer.id/fowawaz\nQRIS (EWALLET,BANK): https://s.id/nusantara-qr",
+				"Kirimkan Saya Url Tiktok! Contoh: https://vt.tiktok.com/ZSRSCjoeW/",
 				msgid
 			)
 	except KeyError:
