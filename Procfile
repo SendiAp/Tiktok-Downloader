@@ -1,1 +1,1 @@
-web: python bot_polling.py
+worker: python bot_polling.py
